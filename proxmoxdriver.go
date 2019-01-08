@@ -153,8 +153,8 @@ func (d *Driver) GetCreateFlags() []mcnflag.Flag {
 		},
 		mcnflag.StringFlag{
 			Name:  "proxmox-guest-password",
-			Usage: "Password to log in to the guest OS (default tcuser for boot2docker)",
-			Value: "tcuser",
+			Usage: "Password to log in to the guest OS (default rancher for Rancher OS)",
+			Value: "rancher",
 		},
 		mcnflag.BoolFlag{
 			Name:  "proxmox-resty-debug",
@@ -258,7 +258,7 @@ func (d *Driver) GetSSHPort() (int, error) {
 
 func (d *Driver) GetSSHUsername() string {
 	if d.SSHUser == "" {
-		d.SSHUser = "docker"
+		d.SSHUser = "rancher"
 	}
 
 	return d.SSHUser
